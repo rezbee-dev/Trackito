@@ -1,0 +1,67 @@
+[project]
+name = "Trackito Bot"
+version = "0.1.0"
+description = "A professional and scalable discord.py bot"
+requires-python = ">=3.11"
+dependencies = [
+    "discord.py>=2.4.0",
+    "python-dotenv>=1.0.0",
+]
+
+[tool.ruff]
+# Target version for syntax checking and upgrades
+target-version = "py311"
+
+# Maximum line length allowed before wrapping
+line-length = 100
+
+# Directories to ignore during linting and formatting
+exclude = [
+    ".git",
+    ".venv",
+    "__pycache__",
+    "build",
+    "dist",
+]
+
+[tool.ruff.lint]
+# Rules to enable
+select = [
+    "E",     # pycodestyle errors (spacing, baseline formatting)
+    "W",     # pycodestyle warnings
+    "F",     # Pyflakes (unused imports, undefined variables)
+    "I",     # isort (clean import sorting and grouping)
+    "B",     # flake8-bugbear (common design flaws and logic bugs)
+    "A",     # flake8-builtins (prevents shadowing builtins like id, list)
+    "ASYNC", # flake8-async (CRITICAL: blocks sync code in async blocks)
+    "RUF",   # Ruff-specific rules (internal optimizations)
+]
+
+# Rules to explicitly ignore
+ignore = [
+    "E501",  # Line too long (we trust the auto-formatter to handle line splits)
+]
+
+# Allow Ruff to automatically fix all safe violations
+fixable = ["ALL"]
+unfixable = []
+
+[tool.ruff.lint.isort]
+# Combines multiple "from x import y" lines into a single clean line
+combine-as-imports = true
+# Keeps local 'cogs' separated from standard and third-party libraries
+known-first-party = ["cogs"]
+
+[tool.ruff.lint.flake8-bugbear]
+# Allow design patterns common in framework architectures
+extend-immutable-calls = ["discord.Intents.default", "discord.Intents.all"]
+
+[tool.ruff.format]
+# Enforce double quotes throughout the project (matching Black's style)
+quote-style = "double"
+
+# Use spaces instead of tabs for indentation
+indent-style = "space"
+
+# Automatically format python code blocks found within docstrings
+docstring-code-format = true
