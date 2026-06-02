@@ -1,6 +1,4 @@
-# Trakito
-
-## Discord Bot
+# Trakito - FastAPI Backend
 
 ### Commands
 
@@ -14,7 +12,7 @@ Update `requirements.txt`
 - `pip freeze > requirements.txt`
 
 Run app
-- `python app/main.py`
+- `fastapi run`
 
 Check for code issues:
 - `ruff check`

@@ -1,5 +1,24 @@
 # Development Log
 
+**June 2, 2026 - Tuesday**
+- FastAPI
+  - Added README
+  - Installed ruff
+  - create endpoint for retrieving current timestamp
+- Discord
+  - added `request` package for fetching API
+  - added discord command listener for `!time` to retrieve current time from API
+
+**May 29, 2026 - Friday**
+- FastAPI setup
+  - `pyenv local 3.14.5`
+  - `python -m venv .venv`
+  - `source .venv/bin/activate`
+  - `pip install "fastapi[standard]"`
+  - `pip freeze > requirements.txt`
+  - copied over `.gitignore` file from `discord` folder
+  - create `main.py` with "hello world" GET route
+
 **May 25, 2026 - Monday - rezbee**
 - Project setup
   - `pyenv install 3.14.5`
@@ -14,13 +33,3 @@
 - Created discord bot token
 - Add discord bot to server
 - Initialized project and confirmed bot was connected
-
-**May 29, 2026 - Friday**
-- FastAPI setup
-  - `pyenv local 3.14.5`
-  - `python -m venv .venv`
-  - `source .venv/bin/activate`
-  - `pip install "fastapi[standard]"`
-  - `pip freeze > requirements.txt`
-  - copied over `.gitignore` file from `discord` folder
-  - create `main.py` with "hello world" GET route

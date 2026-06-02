@@ -3,6 +3,8 @@
 import discord
 import asyncio
 from dotenv import load_dotenv
+import requests
+import json
 import os
 
 load_dotenv()
@@ -14,6 +16,11 @@ class MyClient(discord.Client):
 
     async def on_message(self, message):
         print(f'Message from {message.author}: {message.content}')
+
+        if message.content.startswith('!time'):
+            res = requests.get("http://localhost:8000/time")
+            time = res.json()
+            await message.reply(time["time"], mention_author=True)
 
 intents = discord.Intents.default()
 intents.message_content = True
