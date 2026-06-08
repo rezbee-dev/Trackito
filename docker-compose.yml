@@ -1,0 +1,20 @@
+services:
+  # The FastAPI Web Service
+  trackito-api:
+    build:
+      context: ./api  # Path to your FastAPI project folder
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"           # Exposes port 8080 to your local machine browser
+    restart: unless-stopped
+
+  # The Discord Bot Service
+  trackito-bot:
+    build:
+      context: ./discord  # Path to your Discord bot project folder
+      dockerfile: Dockerfile
+    environment:
+      - DISCORD_TOKEN
+    depends_on:
+      - trackito-api               # Ensures FastAPI starts before the bot
+    restart: unless-stopped

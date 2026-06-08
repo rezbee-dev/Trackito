@@ -1,5 +1,16 @@
 # Development Log
 
+**June 8 - Monday**
+- FastAPI
+  - Dockerized app
+  - Updated README.md with docker commands
+- Discord bot
+  - Dockerized bot
+  - Updated README.md with docker commands
+- General
+  - Created docker-compose.yml
+  - Updated READM.md with docker commands
+
 **June 2, 2026 - Tuesday**
 - FastAPI
   - Added README

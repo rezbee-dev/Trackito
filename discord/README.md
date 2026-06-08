@@ -24,3 +24,15 @@ Auto-fix lint errors:
 
 Format your code: 
 - `ruff format`
+
+Docker Build:
+- `docker build -t trackito-bot-image .`
+
+Docker Run:
+ ```
+    docker run -d \
+    --name trackito-bot \
+    -e DISCORD_TOKEN="your_actual_discord_bot_token_here" \
+    --restart unless-stopped \
+    trackito-bot-image
+```

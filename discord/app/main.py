@@ -18,7 +18,8 @@ class MyClient(discord.Client):
         print(f'Message from {message.author}: {message.content}')
 
         if message.content.startswith('!time'):
-            res = requests.get("http://localhost:8000/time")
+            # res = requests.get("http://localhost:8080/time")
+            res = requests.get("http://trackito-api:8080/time")
             time = res.json()
             await message.reply(time["time"], mention_author=True)
 
